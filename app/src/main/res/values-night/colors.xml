@@ -117,4 +117,18 @@
     <!-- Settings -->
     <color name="settings_summary_text">#ffbbbcc5</color>
     <color name="settings_whats_new">#FFFF4AA2</color>
+
+    <!-- Dark theme -->
+    <color name="menu_dark_theme">#342F6D</color>
+    <color name="toolbar_dark_theme">#1D1133</color>
+    <color name="headerGradientStart_dark_theme">#2B2154</color>
+    <color name="headerGradientMiddleStart_dark_theme">#281E4D</color>
+    <color name="headerGradientMiddleEnd_dark_theme">#281D4C</color>
+    <color name="headerGradientEnd_dark_theme">#2A2051</color>
+    <color name="lightGrey05_dark_theme">@color/photonLightGrey05</color>
+    <color name="lightGrey50_dark_theme">@color/photonLightGrey50</color>
+    <color name="divider_dark_theme">#342F6D</color>
+    <color name="pink40_dark_theme">#FF4AA2</color>
+    <color name="accentBright_dark_theme">@color/pink40_dark_theme</color>
+    <color name="destructive_dark_theme">#FF6A75</color>
 </resources>
