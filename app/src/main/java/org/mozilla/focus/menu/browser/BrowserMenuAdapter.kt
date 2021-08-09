@@ -99,9 +99,11 @@ class BrowserMenuAdapter(
         if (browsers.hasMultipleThirdPartyBrowsers(context)) {
             items.add(
                 MenuItem.Default(
-                    R.id.open_select_browser, resources.getString(
+                    R.id.open_select_browser,
+                    resources.getString(
                         R.string.menu_open_with_a_browser2
-                    ), R.drawable.ic_open_in
+                    ),
+                    R.drawable.ic_open_in
                 )
             )
         }
