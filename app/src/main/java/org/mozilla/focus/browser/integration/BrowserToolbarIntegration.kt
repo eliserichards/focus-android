@@ -5,6 +5,7 @@
 package org.mozilla.focus.browser.integration
 
 import androidx.core.content.ContextCompat
+import androidx.core.content.ContextCompat.getDrawable
 import mozilla.components.browser.state.store.BrowserStore
 import mozilla.components.browser.toolbar.BrowserToolbar
 import mozilla.components.browser.toolbar.display.DisplayToolbar
@@ -42,9 +43,15 @@ class BrowserToolbarIntegration(
         val context = toolbar.context
 
         toolbar.display.apply {
+
+//        didn't work
+//        setUrlBackground(
+//            ContextCompat.getDrawable(requireContext(), R.drawable.toolbar_url_background)
+//        )
+
             colors = colors.copy(
-                hint = ContextCompat.getColor(context, R.color.urlBarHintText),
-                text = 0xFFFFFFFF.toInt()
+                hint = ContextCompat.getColor(toolbar.context, R.color.lightGrey05_dark_theme),
+                text = ContextCompat.getColor(toolbar.context, R.color.lightGrey05_dark_theme)
             )
 
             indicators = listOf(

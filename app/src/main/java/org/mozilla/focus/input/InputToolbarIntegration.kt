@@ -28,6 +28,12 @@ class InputToolbarIntegration(
 
     init {
         with(toolbar.display) {
+            //        didn't work
+//        browserToolbar.display.setUrlBackground(
+//            ContextCompat.getDrawable(requireContext(), R.drawable.toolbar_url_background)
+//        )
+
+
             indicators = emptyList()
             hint = fragment.getString(R.string.urlbar_hint)
             colors = toolbar.display.colors.copy(

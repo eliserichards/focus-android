@@ -105,7 +105,7 @@ object PopupUtils {
         url: String,
         securityInfoIcon: ImageView
     ) {
-        identityState.setTextColor(Color.WHITE)
+        identityState.setTextColor(ContextCompat.getColor(context, R.color.primaryText_dark_theme))
 
         val inactiveColor = ContextCompat.getColor(context, R.color.colorTextInactive)
         val photonYellow = ContextCompat.getColor(context, R.color.photonYellow60)

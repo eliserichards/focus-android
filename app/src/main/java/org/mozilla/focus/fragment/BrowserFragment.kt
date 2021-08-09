@@ -22,6 +22,7 @@ import android.webkit.MimeTypeMap
 import android.widget.FrameLayout
 import android.widget.Toast
 import androidx.core.content.ContextCompat
+import androidx.core.content.ContextCompat.getDrawable
 import androidx.preference.PreferenceManager
 import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.snackbar.Snackbar
@@ -218,18 +219,6 @@ class BrowserFragment :
             tabId = tab.id
         ), this, view)
 
-        blockingThemeBinding.set(
-            BlockingThemeBinding(
-                components.store,
-                tab.id,
-                tab.isCustomTab(),
-                statusBar!!,
-                urlBar!!
-            ),
-            owner = this,
-            view = statusBar!!
-        )
-
         customizeToolbar(view)
 
         val customTabConfig = tab.ifCustomTab()?.config
@@ -280,6 +269,11 @@ class BrowserFragment :
             ),
             owner = this,
             view = browserToolbar
+        )
+
+        // sets the background of the URL when already on a page
+        browserToolbar.display.setUrlBackground(
+            getDrawable(requireContext(), R.drawable.toolbar_url_background)
         )
     }
 

@@ -19,6 +19,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.preference.PreferenceManager
@@ -312,6 +313,11 @@ class UrlInputFragment :
             owner = this,
             view = browserToolbar
         )
+
+//        didn't work
+//        browserToolbar.display.setUrlBackground(
+//            ContextCompat.getDrawable(requireContext(), R.drawable.toolbar_url_background)
+//        )
 
         dismissView.setOnClickListener(this)
 
@@ -609,10 +615,8 @@ class UrlInputFragment :
         */
 
         if (toolbarBackgroundView != null) {
-            val transitionDrawable = toolbarBackgroundView?.background as TransitionDrawable
 
             if (reverse) {
-                transitionDrawable.reverseTransition(ANIMATION_DURATION)
                 toolbarBottomBorder?.visibility = View.VISIBLE
 
                 if (!isOverlay) {
@@ -620,7 +624,6 @@ class UrlInputFragment :
                     menuView?.visibility = View.VISIBLE
                 }
             } else {
-                transitionDrawable.startTransition(ANIMATION_DURATION)
                 toolbarBottomBorder?.visibility = View.GONE
             }
         }
