@@ -96,11 +96,11 @@ object ViewUtils {
 
         val snackbarView = snackbar.view
         val snackbarTextView = snackbarView.findViewById<View>(R.id.snackbar_text) as TextView
-        snackbarTextView.setTextColor(ContextCompat.getColor(context, R.color.snackbarTextColor))
+        snackbarTextView.setTextColor(ContextCompat.getColor(context, R.color.primaryText_dark_theme))
         if (FeatureFlags.isMvp) {
             snackbarView.setBackgroundResource(R.drawable.background_snackbar)
         } else {
-            snackbarView.setBackgroundColor(ContextCompat.getColor(context, R.color.snackbarBackground))
+            snackbarView.setBackgroundColor(ContextCompat.getColor(context, R.color.menu_dark_theme))
             snackbarTextView.gravity = Gravity.CENTER
             snackbarTextView.textAlignment = View.TEXT_ALIGNMENT_CENTER
         }
@@ -112,9 +112,9 @@ object ViewUtils {
         val context = view.context
         val snackbar = Snackbar.make(view, resId, Snackbar.LENGTH_LONG)
         val snackbarView = snackbar.view
-        snackbarView.setBackgroundColor(ContextCompat.getColor(context, R.color.snackbarBackground))
+        snackbarView.setBackgroundColor(ContextCompat.getColor(context, R.color.menu_dark_theme))
         val snackbarTextView = snackbarView.findViewById<TextView>(R.id.snackbar_text)
-        snackbarTextView.setTextColor(ContextCompat.getColor(context, R.color.snackbarTextColor))
+        snackbarTextView.setTextColor(ContextCompat.getColor(context, R.color.primaryText_dark_theme))
         snackbar.setActionTextColor(ContextCompat.getColor(context, R.color.snackbarActionText))
         return snackbar
     }

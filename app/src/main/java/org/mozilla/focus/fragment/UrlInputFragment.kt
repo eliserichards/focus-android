@@ -328,7 +328,7 @@ class UrlInputFragment :
             val backgroundId = if (FeatureFlags.isMvp) {
                 R.drawable.dark_background
             } else {
-                R.drawable.background_gradient
+                R.drawable.background_gradient_dark
             }
             backgroundView?.setBackgroundResource(backgroundId)
 

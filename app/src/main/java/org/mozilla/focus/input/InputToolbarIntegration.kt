@@ -31,15 +31,15 @@ class InputToolbarIntegration(
             indicators = emptyList()
             hint = fragment.getString(R.string.urlbar_hint)
             colors = toolbar.display.colors.copy(
-                hint = ContextCompat.getColor(toolbar.context, R.color.urlBarHintText),
-                text = 0xFFFFFFFF.toInt()
+                hint = ContextCompat.getColor(toolbar.context, R.color.lightGrey05_dark_theme),
+                text = ContextCompat.getColor(toolbar.context, R.color.lightGrey05_dark_theme)
             )
         }
         toolbar.edit.hint = fragment.getString(R.string.urlbar_hint)
         toolbar.private = true
         toolbar.edit.colors = toolbar.edit.colors.copy(
-            hint = ContextCompat.getColor(toolbar.context, R.color.urlBarHintText),
-            text = 0xFFFFFFFF.toInt()
+            hint = ContextCompat.getColor(toolbar.context, R.color.lightGrey05_dark_theme),
+            text = ContextCompat.getColor(toolbar.context, R.color.lightGrey05_dark_theme)
         )
         toolbar.setOnEditListener(object : Toolbar.OnEditListener {
             override fun onTextChanged(text: String) {

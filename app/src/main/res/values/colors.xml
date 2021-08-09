@@ -118,8 +118,7 @@
     <color name="menu_dark_theme">#342F6D</color>
     <color name="toolbar_dark_theme">#1D1133</color>
     <color name="headerGradientStart_dark_theme">#2B2154</color>
-    <color name="headerGradientMiddleStart_dark_theme">#281E4D</color>
-    <color name="headerGradientMiddleEnd_dark_theme">#281D4C</color>
+    <color name="headerGradientMiddle_dark_theme">#281D4C</color>
     <color name="headerGradientEnd_dark_theme">#2A2051</color>
     <color name="lightGrey05_dark_theme">@color/photonLightGrey05</color>
     <color name="lightGrey50_dark_theme">@color/photonLightGrey50</color>
