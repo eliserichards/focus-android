@@ -131,4 +131,6 @@
     <color name="pink40_dark_theme">#FF4AA2</color>
     <color name="accentBright_dark_theme">@color/pink40_dark_theme</color>
     <color name="destructive_dark_theme">#FF6A75</color>
+    <color name="primaryText_dark_theme">@color/lightGrey05_dark_theme</color>
+    <color name="secondaryText_dark_theme">@color/lightGrey50_dark_theme</color>
 </resources>
