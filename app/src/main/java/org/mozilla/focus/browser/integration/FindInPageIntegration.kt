@@ -39,6 +39,7 @@ class FindInPageIntegration(
 
     fun show(sessionState: SessionState) {
         findInPageView.visibility = View.VISIBLE
+        findInPageView
         feature.bind(sessionState)
     }
 

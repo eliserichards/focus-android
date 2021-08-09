@@ -27,12 +27,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:backgroundTint="@color/home_screen_dialog_bg_tint"
+            android:backgroundTint="@color/colorPrimary_old"
             android:inputType="text"
             android:paddingStart="10dp"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@color/home_screen_dialog_text"
-            android:textColorHighlight="@color/colorAccent"
+            android:textColorHighlight="@color/colorAccent_old"
             android:textColorHint="@color/home_screen_dialog_text"
             android:textCursorDrawable="@null" />
 
@@ -55,12 +55,14 @@
         <Button
             android:id="@+id/addtohomescreen_dialog_cancel"
             style="@style/ButtonStyle"
+            android:textColor="@color/accentBright"
             android:contentDescription="@string/dialog_addtohomescreen_action_cancel"
             android:text="@string/dialog_addtohomescreen_action_cancel"/>
 
         <Button
             android:id="@+id/addtohomescreen_dialog_add"
             style="@style/ButtonStyle"
+            android:textColor="@color/accentBright"
             android:contentDescription="@string/dialog_addtohomescreen_action_add"
             android:text="@string/dialog_addtohomescreen_action_add"/>
     </LinearLayout>

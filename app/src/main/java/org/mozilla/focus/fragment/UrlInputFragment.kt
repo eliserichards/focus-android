@@ -19,6 +19,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.Observer
@@ -359,6 +360,11 @@ class UrlInputFragment :
             view = view
         )
 
+//        didn't work
+//        browserToolbar.display.setUrlBackground(
+//            ContextCompat.getDrawable(requireContext(), R.drawable.toolbar_url_background)
+//        )
+
         dismissView.setOnClickListener(this)
 
         if (urlInputContainerView != null) {
@@ -371,7 +377,7 @@ class UrlInputFragment :
         if (isOverlay) {
             keyboardLinearLayout?.visibility = View.GONE
         } else {
-            backgroundView?.setBackgroundResource(R.drawable.dark_background)
+            backgroundView?.setBackgroundResource(R.drawable.background_gradient_dark)
 
             dismissView?.visibility = View.GONE
 
@@ -615,10 +621,8 @@ class UrlInputFragment :
         */
 
         if (toolbarBackgroundView != null) {
-            val transitionDrawable = toolbarBackgroundView?.background as TransitionDrawable
 
             if (reverse) {
-                transitionDrawable.reverseTransition(ANIMATION_DURATION)
                 toolbarBottomBorder?.visibility = View.VISIBLE
 
                 if (!isOverlay) {
@@ -626,7 +630,6 @@ class UrlInputFragment :
                     menuView?.visibility = View.VISIBLE
                 }
             } else {
-                transitionDrawable.startTransition(ANIMATION_DURATION)
                 toolbarBottomBorder?.visibility = View.GONE
             }
         }

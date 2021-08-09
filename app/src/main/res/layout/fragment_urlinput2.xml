@@ -62,7 +62,7 @@
             android:id="@+id/toolbarBackgroundView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/animated_background_url" />
+            android:background="@drawable/background_gradient_dark" />
 
         <View
             android:id="@+id/toolbarBottomBorder"
@@ -70,7 +70,7 @@
             android:layout_height="1dp"
             android:layout_gravity="bottom"
             android:alpha="0.20"
-            android:background="@color/photonGrey90" />
+            android:background="@color/divider" />
 
         <FrameLayout
             android:id="@+id/urlInputContainerView"
@@ -123,6 +123,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/urlinput_height"
-        android:visibility="gone"></FrameLayout>
+        android:visibility="gone" />
 
 </FrameLayout>

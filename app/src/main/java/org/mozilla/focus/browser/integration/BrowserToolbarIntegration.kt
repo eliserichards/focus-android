@@ -42,9 +42,15 @@ class BrowserToolbarIntegration(
         val context = toolbar.context
 
         toolbar.display.apply {
+
+//        didn't work
+//        setUrlBackground(
+//            ContextCompat.getDrawable(requireContext(), R.drawable.toolbar_url_background)
+//        )
+
             colors = colors.copy(
-                hint = ContextCompat.getColor(context, R.color.urlBarHintText),
-                text = 0xFFFFFFFF.toInt()
+                hint = ContextCompat.getColor(toolbar.context, R.color.lightGrey05),
+                text = ContextCompat.getColor(toolbar.context, R.color.lightGrey05)
             )
 
             indicators = listOf(
