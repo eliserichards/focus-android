@@ -49,8 +49,8 @@ class BrowserToolbarIntegration(
 //        )
 
             colors = colors.copy(
-                hint = ContextCompat.getColor(toolbar.context, R.color.lightGrey05),
-                text = ContextCompat.getColor(toolbar.context, R.color.lightGrey05)
+                hint = ContextCompat.getColor(toolbar.context, R.color.photonLightGrey05),
+                text = ContextCompat.getColor(toolbar.context, R.color.photonLightGrey05)
             )
 
             indicators = listOf(

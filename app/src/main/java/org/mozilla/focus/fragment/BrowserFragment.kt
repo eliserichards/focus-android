@@ -23,7 +23,6 @@ import android.widget.FrameLayout
 import android.widget.Toast
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.content.ContextCompat
-import androidx.core.content.ContextCompat.getDrawable
 import androidx.preference.PreferenceManager
 import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.snackbar.Snackbar
@@ -58,7 +57,6 @@ import org.mozilla.focus.R
 import org.mozilla.focus.activity.InstallFirefoxActivity
 import org.mozilla.focus.activity.MainActivity
 import org.mozilla.focus.browser.DisplayToolbar
-import org.mozilla.focus.browser.binding.BlockingThemeBinding
 import org.mozilla.focus.browser.binding.TabCountBinding
 import org.mozilla.focus.browser.integration.BrowserMenuController
 import org.mozilla.focus.browser.integration.BrowserToolbarIntegration
@@ -114,7 +112,6 @@ class BrowserFragment :
 
     private val toolbarIntegration = ViewBoundFeatureWrapper<BrowserToolbarIntegration>()
 
-    private val blockingThemeBinding = ViewBoundFeatureWrapper<BlockingThemeBinding>()
     private val tabCountBinding = ViewBoundFeatureWrapper<TabCountBinding>()
     private lateinit var trackingProtectionPanel: TrackingProtectionPanel
     /**
@@ -332,11 +329,6 @@ class BrowserFragment :
             ),
             owner = this,
             view = browserToolbar
-        )
-
-        // sets the background of the URL when already on a page
-        browserToolbar.display.setUrlBackground(
-            getDrawable(requireContext(), R.drawable.toolbar_url_background)
         )
     }
 

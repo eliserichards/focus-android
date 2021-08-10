@@ -85,7 +85,6 @@
             <mozilla.components.feature.findinpage.view.FindInPageBar
                 android:id="@+id/find_in_page"
                 android:layout_width="match_parent"
-                android:background="@color/colorPrimary"
                 android:elevation="10dp"
                 android:layout_height="56dp"
                 android:padding="4dp"

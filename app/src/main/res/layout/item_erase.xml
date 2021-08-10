@@ -15,5 +15,5 @@
     android:ellipsize="end"
     tools:drawableStart="@drawable/ic_delete"
     android:text="@string/tabs_tray_action_erase"
-    android:textColor="@color/accentBright"
+    android:textColor="@color/primaryText"
     android:textSize="14sp" />

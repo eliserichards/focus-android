@@ -4,7 +4,6 @@
 
 package org.mozilla.focus.browser.binding
 
-import android.graphics.drawable.GradientDrawable
 import android.graphics.drawable.TransitionDrawable
 import android.view.View
 import kotlinx.coroutines.flow.Flow
@@ -32,7 +31,7 @@ class BlockingThemeBinding(
     private val urlBar: View
 ) : AbstractBinding<BrowserState>(store) {
     private var backgroundTransitionGroup: TransitionDrawableGroup? = updateResources(
-        isCustomTab
+        isCustomTab, enabled = true
     )
     private var hasLoadedOnce = false
     private var trackingProtectionDisabled = false
@@ -46,7 +45,7 @@ class BlockingThemeBinding(
     private fun onLoadingStateChanged(tab: SessionState) {
         if (tab.trackingProtection.ignoredOnTrackingProtection != trackingProtectionDisabled) {
             trackingProtectionDisabled = tab.trackingProtection.ignoredOnTrackingProtection
-            backgroundTransitionGroup = updateResources(isCustomTab)
+            backgroundTransitionGroup = updateResources(isCustomTab, trackingProtectionDisabled.not())
         }
 
         if (tab.content.loading) {
@@ -63,14 +62,27 @@ class BlockingThemeBinding(
     }
 
     private fun updateResources(
-        isCustomTab: Boolean
+        isCustomTab: Boolean,
+        enabled: Boolean
     ): TransitionDrawableGroup {
-        statusBar.setBackgroundResource(R.drawable.background_gradient_dark)
-        urlBar.setBackgroundResource(R.drawable.background_gradient_dark)
+        statusBar.setBackgroundResource(
+            if (enabled) {
+                R.drawable.animated_background
+            } else {
+                R.drawable.animated_background_disabled
+            }
+        )
 
         return if (!isCustomTab) {
             // Only update the toolbar background if this is not a custom tab. Custom tabs set their
             // own color and we do not want to override this here.
+            urlBar.setBackgroundResource(
+                if (enabled) {
+                    R.drawable.animated_background
+                } else {
+                    R.drawable.animated_background_disabled
+                }
+            )
 
             TransitionDrawableGroup(
                 urlBar.background as TransitionDrawable,

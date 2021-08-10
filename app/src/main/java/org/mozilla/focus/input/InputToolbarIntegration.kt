@@ -28,24 +28,18 @@ class InputToolbarIntegration(
 
     init {
         with(toolbar.display) {
-            //        didn't work
-//        browserToolbar.display.setUrlBackground(
-//            ContextCompat.getDrawable(requireContext(), R.drawable.toolbar_url_background)
-//        )
-
-
             indicators = emptyList()
             hint = fragment.getString(R.string.urlbar_hint)
             colors = toolbar.display.colors.copy(
-                hint = ContextCompat.getColor(toolbar.context, R.color.lightGrey05),
-                text = ContextCompat.getColor(toolbar.context, R.color.lightGrey05)
+                hint = ContextCompat.getColor(toolbar.context, R.color.photonLightGrey05),
+                text = ContextCompat.getColor(toolbar.context, R.color.primaryText)
             )
         }
         toolbar.edit.hint = fragment.getString(R.string.urlbar_hint)
         toolbar.private = true
         toolbar.edit.colors = toolbar.edit.colors.copy(
-            hint = ContextCompat.getColor(toolbar.context, R.color.lightGrey05),
-            text = ContextCompat.getColor(toolbar.context, R.color.lightGrey05)
+            hint = ContextCompat.getColor(toolbar.context, R.color.photonLightGrey05),
+            text = ContextCompat.getColor(toolbar.context, R.color.primaryText)
         )
         toolbar.setOnEditListener(object : Toolbar.OnEditListener {
             override fun onTextChanged(text: String) {

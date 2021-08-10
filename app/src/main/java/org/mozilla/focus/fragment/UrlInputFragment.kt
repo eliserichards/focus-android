@@ -8,7 +8,6 @@ import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.content.SharedPreferences
 import android.content.res.Configuration
-import android.graphics.drawable.TransitionDrawable
 import android.os.Bundle
 import android.text.SpannableString
 import android.text.method.LinkMovementMethod
