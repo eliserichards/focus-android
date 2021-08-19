@@ -313,7 +313,13 @@ class BrowserFragment :
                 store = requireComponents.store,
                 onItemTapped = { controller.handleMenuInteraction(it) }
             )
-            browserToolbar.display.menuBuilder = browserMenu.menuBuilder
+
+            browserToolbar.display.apply {
+                menuBuilder = browserMenu.menuBuilder
+                setUrlBackground(
+                    ContextCompat.getDrawable(requireContext(), R.drawable.toolbar_url_background)
+                )
+            }
         }
 
         toolbarIntegration.set(
@@ -348,6 +354,12 @@ class BrowserFragment :
             owner = this,
             view = eraseButton
         )
+
+        // moving this into customize toolbar
+//        val browserToolbar = view.findViewById<BrowserToolbar>(R.id.browserToolbar)
+//        browserToolbar.display.setUrlBackground(
+//            ContextCompat.getDrawable(requireContext(), R.drawable.toolbar_url_background)
+//        )
     }
 
     private fun initialiseCustomTabUi(view: View, customTabConfig: CustomTabConfig) {

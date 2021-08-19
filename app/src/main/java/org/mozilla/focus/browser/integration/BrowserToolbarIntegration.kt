@@ -50,7 +50,7 @@ class BrowserToolbarIntegration(
 
             colors = colors.copy(
                 hint = ContextCompat.getColor(toolbar.context, R.color.photonLightGrey05),
-                text = ContextCompat.getColor(toolbar.context, R.color.photonLightGrey05)
+                text = ContextCompat.getColor(toolbar.context, R.color.primaryText)
             )
 
             indicators = listOf(
@@ -91,6 +91,14 @@ class BrowserToolbarIntegration(
                 menuItemIndex = menu.menuBuilder.items.size - 1,
                 closeListener = { fragment.closeCustomTab() }
             )
+        } else {
+            // normal tab ui
+            toolbar.display.setUrlBackground(
+                ContextCompat.getDrawable(
+                    fragment.requireContext(),
+                    R.drawable.toolbar_url_background
+                )
+            )
         }
 
         if (HardwareUtils.isTablet(context)) {
@@ -101,6 +109,14 @@ class BrowserToolbarIntegration(
                 sessionUseCases,
                 customTabId
             )
+
+            // ..
+//            toolbar.display.setUrlBackground(
+//                ContextCompat.getDrawable(
+//                    fragment.requireContext(),
+//                    R.drawable.toolbar_url_background
+//                )
+//            )
         }
     }
 
@@ -109,6 +125,13 @@ class BrowserToolbarIntegration(
 
         customTabsFeature?.start()
         navigationButtonsIntegration?.start()
+
+//        toolbar.display.setUrlBackground(
+//            ContextCompat.getDrawable(
+//                fragment.requireContext(),
+//                R.drawable.toolbar_url_background
+//            )
+//        )
     }
 
     override fun stop() {
